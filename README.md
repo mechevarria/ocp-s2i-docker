@@ -10,7 +10,7 @@ For developers using [Openshift](https://www.openshift.com/). Included are examp
 
 ## Requirements
 
-* The Container Development Kit](https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.5/html-single/getting_started_guide/) installed. A [developers.redhat.com](https://developers.redhat.com/) account, which is free to developers, is all that is needed to install and run the enterprise tooling. 
+* The [Container Development Kit](https://access.redhat.com/documentation/en-us/red_hat_container_development_kit/3.5/html-single/getting_started_guide/) installed. A [developers.redhat.com](https://developers.redhat.com/) account, which is free to developers, is all that is needed to install and run the enterprise tooling. 
 * [docker](https://www.docker.com/get-started) for development
   * For development it is recommended to have your local docker use the [image registry](https://docs.okd.io/latest/minishift/openshift/openshift-docker-registry.html) of the Container Development Kit
 * [s2i](https://github.com/openshift/source-to-image) as the build tool using docker
