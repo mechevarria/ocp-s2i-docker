@@ -18,3 +18,5 @@ For developers using [Openshift](https://www.openshift.com/). Included are examp
 ## Usage
 
 Each folder has numbered bash scripts that are used to build the same basic Java Webapp in multiple ways and run using your local docker instance. By using the Container Development Kit registry you can easily spin up the application in Openshift as well via the web console.
+
+The **builder** directory is based on the scaffolding providing from the **s2i** create command 
