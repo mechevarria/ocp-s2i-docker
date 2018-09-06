@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# https://github.com/openshift/source-to-image/blob/master/docs/cli.md#s2i-build
+
+registry=$(minishift openshift registry)
+project=myproject
+app=tomcat-war
+source_location=.
+builder_image=jboss-webserver-3/webserver31-tomcat8-openshift
+tag=${registry}/${project}/${app}
+flags=-c
+
+docker login -u developer -p $(oc whoami -t) ${registry}
+
+s2i build ${source_location} ${builder_image} ${tag} ${flags}
+
+docker push ${tag}
