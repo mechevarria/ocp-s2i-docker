@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+/usr/local/s2i/assemble
+
+echo "****** After standard assemble script ******"
+
+cp /tmp/src/example.properties ${JWS_HOME}
