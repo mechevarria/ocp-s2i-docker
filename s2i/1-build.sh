@@ -8,7 +8,7 @@ app=jws-s2i
 source_location=.
 builder_image=jboss-webserver-3/webserver31-tomcat8-openshift
 tag=${registry}/${project}/${app}
-flags=-c
+flags="-c --incremental=true"
 
 docker login -u developer -p $(oc whoami -t) ${registry}
 
