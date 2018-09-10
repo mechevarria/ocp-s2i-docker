@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/jboss-webserver-3/webserver31-tomcat8-openshift:latest
+FROM registry.access.redhat.com/jboss-webserver-5/webserver50-tomcat9-openshift:latest
 
 USER root
 COPY example.properties /opt
@@ -8,4 +8,4 @@ EXPOSE 8080
 
 USER jboss
 
-CMD ["/opt/webserver/bin/launch.sh", "run"]
+CMD ["/opt/jws-5.0/tomcat/bin/launch.sh", "run"]

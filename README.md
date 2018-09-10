@@ -15,8 +15,15 @@ For developers using [Openshift](https://www.openshift.com/). Included are examp
   * For development it is recommended to have your local docker use the [image registry](https://docs.okd.io/latest/minishift/openshift/openshift-docker-registry.html) of the Container Development Kit
 * [s2i](https://github.com/openshift/source-to-image) as the build tool using docker
 
+## Setup
+
+* Run the `install-jws5.0-templates.sh` script to install [JBoss Web Server 5.0](https://access.redhat.com/products/red-hat-jboss-web-server/) (Enterprise Tomcat 9) 
+image streams and templates in the CDK
+
 ## Usage
 
 Each folder has numbered bash scripts that are used to build the same basic Java Webapp in multiple ways and run using your local docker instance. By using the Container Development Kit registry you can easily spin up the application in Openshift as well via the web console.
+
+The **s2i** directory does a full build from source and includes an additional script to enable remote debugging, `port-forward.sh`
 
 The **builder** directory is based on the scaffolding providing from the **s2i** create command 
