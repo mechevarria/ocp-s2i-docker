@@ -1,0 +1,9 @@
+#!/bin/sh
+
+/usr/local/s2i/assemble
+
+custom=jpda-launch.sh
+
+echo "****** Copying over ${custom} to bin directory ******"
+
+cp -v /tmp/src/${custom} ${JWS_HOME}/bin

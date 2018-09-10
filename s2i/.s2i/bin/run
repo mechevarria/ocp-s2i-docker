@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec $JWS_HOME/bin/jpda-launch.sh

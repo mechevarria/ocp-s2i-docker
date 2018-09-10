@@ -6,7 +6,7 @@ registry=$(minishift openshift registry)
 project=myproject
 app=jws-s2i
 source_location=.
-builder_image=jboss-webserver-3/webserver31-tomcat8-openshift
+builder_image=jboss-webserver-5/webserver50-tomcat9-openshift
 tag=${registry}/${project}/${app}
 flags="-c --incremental=true"
 
