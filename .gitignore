@@ -12,3 +12,4 @@ build
 .classpath
 .settings
 /out/
+*.code-workspace
