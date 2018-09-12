@@ -2,12 +2,16 @@
 
 /usr/local/s2i/assemble
 
-echo "****** Copying over ROOT.xml to conf directory ******"
-mkdir -vp ${JWS_HOME}/conf/Catalina/localhost
-cp -v /tmp/src/.s2i/ROOT.xml ${JWS_HOME}/conf/Catalina/localhost
+context=ROOT.xml
+conf=${JWS_HOME}/conf/Catalina/localhost
 
+echo "****** Copying over ${context} to ${conf} ******"
+mkdir -vp ${conf}
+cp -v /tmp/src/.s2i/${context} ${conf}
 
-echo "****** Adding jpda to run command ******"
 search="catalina.sh run"
 replace="catalina.sh jpda run"
-sed -i "s/${search}/${replace}/g" ${JWS_HOME}/bin/launch.sh
+run=${JWS_HOME}/bin/launch.sh
+
+echo "****** Changing ${search} to ${replace} in ${run} ******"
+sed -i "s/${search}/${replace}/g" ${run}
