@@ -13,5 +13,5 @@ search="catalina.sh run"
 replace="catalina.sh jpda run"
 run=${JWS_HOME}/bin/launch.sh
 
-echo "****** Changing ${search} to ${replace} in ${run} ******"
+echo "****** Changing \"${search}\" to \"${replace}\" in ${run} ******"
 sed -i "s/${search}/${replace}/g" ${run}
