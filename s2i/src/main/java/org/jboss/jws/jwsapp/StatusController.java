@@ -1,7 +1,5 @@
 package org.jboss.jws.jwsapp;
 
-import java.util.HashMap;
-
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -13,9 +11,11 @@ import javax.ws.rs.core.MediaType;
 public class StatusController {
 	
 	@GET
-	public HashMap<String,String> isUp() {
+	public Status isUp() {
 
-		return StatusService.isUp();
+		Status restStatus = new Status("The Java REST API is now up!");
+
+		return restStatus;
 
 	}
 }
