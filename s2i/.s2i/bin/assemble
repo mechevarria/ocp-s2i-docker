@@ -3,7 +3,7 @@
 /usr/local/s2i/assemble
 
 echo "****** Copying over reloadable context to conf directory ******"
-cp -v /tmp/src/ROOT.xml ${JWS_HOME}conf/Catalina/localhost
+cp -v /tmp/src/ROOT.xml ${JWS_HOME}/conf/Catalina/localhost
 
 custom=jpda-launch.sh
 
