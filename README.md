@@ -24,6 +24,6 @@ image streams and templates in the CDK
 
 Each folder has numbered bash scripts that are used to build the same basic Java Webapp in multiple ways and run using your local docker instance. By using the Container Development Kit registry you can easily spin up the application in Openshift as well via the web console.
 
-The **s2i** directory does a full build from source and includes an additional script to enable remote debugging, `port-forward.sh`
+The **s2i** directory does a full build from source and includes an additional script to enable remote debugging, `openshift-debug.sh` and hot deploying changes from an exploded WAR `openshift-hotdeploy`
 
 The **builder** directory is based on the scaffolding providing from the **s2i** create command 
