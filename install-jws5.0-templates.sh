@@ -16,4 +16,4 @@ do
   https://raw.githubusercontent.com/jboss-container-images/jboss-webserver-5-openshift-image/webserver50-dev/templates/${resource}
 done
 
-oc -n openshift import-image webserver50-tomcat9-openshift --from=registry.access.redhat.com/jboss-webserver-5/webserver50-tomcat9-openshift --confirm
+oc -n openshift import-image jboss-webserver50-tomcat9-openshift --from=registry.access.redhat.com/jboss-webserver-5/webserver50-tomcat9-openshift --confirm --all
