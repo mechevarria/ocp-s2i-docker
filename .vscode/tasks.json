@@ -1,0 +1,50 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "verify",
+            "type": "shell",
+            "command": "mvn -B verify",
+            "group": "build"
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "mvn clean",
+            "group": "build"
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "mvn -B test",
+            "group": "test"
+        },
+        {
+            "label": "package",
+            "type": "shell",
+            "command": "mvn package -P openshift",
+            "group": "build"
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "mvn prepare-package war:exploded",
+            "options": {
+                "cwd": "${workspaceFolder}/s2i"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true
+            }
+        }
+    ]
+}
