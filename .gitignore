@@ -2,7 +2,6 @@
 *.swp
 *~
 node_modules
-lib
 .idea
 target
 *.iml
@@ -12,4 +11,3 @@ build
 .classpath
 .settings
 /out/
-*.code-workspace
