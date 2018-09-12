@@ -4,8 +4,10 @@
 
 echo "****** Copying over ROOT.xml to conf directory ******"
 mkdir -vp ${JWS_HOME}/conf/Catalina/localhost
-cp -v /tmp/src/custom/ROOT.xml ${JWS_HOME}/conf/Catalina/localhost
+cp -v /tmp/src/.s2i/ROOT.xml ${JWS_HOME}/conf/Catalina/localhost
 
 
-echo "****** Copying over jpda-launch.sh to bin directory ******"
-cp -v /tmp/src/custom/jpda-launch.sh ${JWS_HOME}/bin
+echo "****** Adding jpda to run command ******"
+search="catalina.sh run"
+replace="catalina.sh jpda run"
+sed -i "s/${search}/${replace}/g" ${JWS_HOME}/bin/launch.sh
