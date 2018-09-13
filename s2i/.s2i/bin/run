@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# start custom script
+if [ "${DEBUG}" = "true" ]; then
+  echo "DEBUG is on"
+  
+  echo "****** Adding reloadable option for ROOT context ******"
+  conf=${JWS_HOME}/conf/Catalina/localhost
+  mkdir -vp ${conf}
+  echo "<Context docBase=\"ROOT\" path=\"\" reloadable=\"true\"></Context>" | tee ${conf}/ROOT.xml
+  
+  search="catalina.sh run"
+  replace="catalina.sh jpda run"
+  run=${JWS_HOME}/bin/launch.sh
+  
+  echo "****** Changing \"${search}\" to \"${replace}\" in ${run} ******"
+  sed -i "s/${search}/${replace}/g" ${run}
+
+else
+  echo "DEBUG is off"
+fi
+# end custom script
+
+exec $JWS_HOME/bin/launch.sh

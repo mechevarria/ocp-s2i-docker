@@ -10,3 +10,5 @@ oc new-app \
 -p SOURCE_REPOSITORY_REF=master \
 -p CONTEXT_DIR=/s2i \
 jws50-tomcat9-basic-s2i
+
+oc set env dc/jws-s2i DEBUG=true
