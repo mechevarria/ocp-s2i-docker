@@ -4,33 +4,52 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "verify",
+            "label": "compile",
             "type": "shell",
-            "command": "mvn -B verify",
-            "group": "build"
+            "command": "mvn -B compile",
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}/s2i"
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true
+            }
         },
         {
             "label": "clean",
             "type": "shell",
             "command": "mvn clean",
-            "group": "build"
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}/s2i"
+            }
         },
         {
             "label": "test",
             "type": "shell",
             "command": "mvn -B test",
-            "group": "test"
+            "group": "test",
+            "options": {
+                "cwd": "${workspaceFolder}/s2i"
+            }
         },
         {
-            "label": "package",
+            "label": "openshift",
             "type": "shell",
-            "command": "mvn package -P openshift",
-            "group": "build"
+            "command": "mvn -B package -P openshift",
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}/s2i"
+            }
         },
         {
-            "label": "build",
+            "label": "exploded",
             "type": "shell",
-            "command": "mvn prepare-package war:exploded",
+            "command": "mvn -B prepare-package war:exploded",
             "options": {
                 "cwd": "${workspaceFolder}/s2i"
             },
