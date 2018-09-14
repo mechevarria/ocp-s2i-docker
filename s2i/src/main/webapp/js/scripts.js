@@ -1,7 +1,7 @@
-$(document).ready(function () {
-    $('#check').click(function () {
+$(document).ready(() => {
+    $('#check').click(() => {
 
-        $.getJSON('rest/status', function (data) {
+        $.getJSON('rest/status', data => {
             var json = JSON.stringify(data, null, 4);
 
             var previous = $('#output').val();
@@ -15,7 +15,7 @@ $(document).ready(function () {
 
     });
 
-    $('#clear').click(function () {
+    $('#clear').click(() => {
         $('#output').html('');
     });
 });
