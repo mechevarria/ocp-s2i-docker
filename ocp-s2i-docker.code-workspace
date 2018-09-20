@@ -5,6 +5,14 @@
 		}
 	],
 	"settings": {
-		"files.autoSave": "onFocusChange"
+		"files.autoSave": "onFocusChange",
+		"triggerTaskOnSave.tasks": {
+			"exploded": [
+				"**/*.java",
+				"**/webapp/**/*.html",
+				"**/webapp/**/*.js",
+				"**/webapp/**/*.css"
+			]
+		}
 	}
 }
