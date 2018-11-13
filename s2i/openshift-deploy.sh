@@ -1,9 +1,15 @@
 #!/usr/bin/env bash
 
-oc login -u developer
+# prefixing project with user to allow multiple people building the same project on the same cluster
+proj_name="$(oc whoami)-eap-build"
+proj_exists="$(oc projects | grep ${proj_name})"
 
-proj_name="$(oc whoami)-ntier"
-oc project ${proj_name}
+# if project doesn't exist, make a new one.  Otherwise switch to that project
+if [[ -z ${proj_exists} ]]; then
+  oc new-project ${proj_name} --display-name="EAP Build Examples" --description="Examples of s2i, s2i-binary and docker builds with the EAP Openshift image"
+else
+  oc project ${proj_name}
+fi
 
 oc new-app \
 --name=eap-s2i \

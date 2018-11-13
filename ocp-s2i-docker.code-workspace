@@ -13,6 +13,7 @@
 				"**/webapp/**/*.js",
 				"**/webapp/**/*.css"
 			]
-		}
+		},
+		"java.configuration.updateBuildConfiguration": "automatic"
 	}
 }
