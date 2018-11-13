@@ -2,4 +2,4 @@
 
 echo "****** Custom assemble script ******"
 
-cp /tmp/src/ROOT.war /deployments/
+cp -rv /tmp/src/ROOT.war /deployments/
