@@ -6,7 +6,7 @@ echo "****** Adding debug option to launch script ******"
 
 search="standalone.sh -c"
 replace="standalone.sh --debug -c"
-run=${EAP_HOME}/bin/openshift-launch.sh
+run=${JBOSS_HOME}/bin/openshift-launch.sh
 
 echo "****** Changing \"${search}\" to \"${replace}\" in ${run} ******"
 sed -i "s/${search}/${replace}/g" ${run}
