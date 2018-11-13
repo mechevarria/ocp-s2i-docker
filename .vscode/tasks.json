@@ -40,7 +40,7 @@
         {
             "label": "openshift",
             "type": "shell",
-            "command": "mvn -B package -P openshift",
+            "command": "mvn -B package",
             "group": "build",
             "options": {
                 "cwd": "${workspaceFolder}/s2i"
