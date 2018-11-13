@@ -1,4 +1,4 @@
-package org.jboss.jws.jwsapp;
+package org.jboss.eap.s2i;
 
 import java.time.LocalDateTime;
 
@@ -16,6 +16,7 @@ public class Status {
     public String getMessage() {
         return this.message;
     }
+
     public void setMessage(String message) {
         this.message = message;
     }
@@ -23,6 +24,7 @@ public class Status {
     public String getTime() {
         return this.time;
     }
+
     public void setTime(String time) {
         this.time = time;
     }
