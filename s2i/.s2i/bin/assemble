@@ -10,10 +10,3 @@ run=${JBOSS_HOME}/bin/openshift-launch.sh
 
 echo "****** Changing \"${search}\" to \"${replace}\" in ${run} ******"
 sed -i "s/${search}/${replace}/g" ${run}
-
-search="auto-deploy-exploded=\"false\""
-replace="auto-deploy-exploded=\"true\""
-config=$JBOSS_HOME/standalone/configuration/standalone-openshift.xml
-
-echo "****** Changing \"${search}\" to \"${replace}\" in ${run} ******"
-sed -i "s/${search}/${replace}/g" ${config}
