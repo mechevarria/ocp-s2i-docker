@@ -2,7 +2,7 @@
 
 port=8080
 registry=$(minishift openshift registry)
-project=myproject
+project="$(oc whoami)-eap-build"
 app=eap-docker
 tag=${registry}/${project}/${app}:latest
 
