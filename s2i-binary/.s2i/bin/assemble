@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-/usr/local/s2i/assemble
+echo "****** Custom assemble script ******"
 
-echo "****** After standard assemble script ******"
-
-cp /tmp/src/example.properties ${JWS_HOME}
+cp /tmp/src/ROOT.war /deployments/

@@ -38,7 +38,7 @@
             }
         },
         {
-            "label": "openshift",
+            "label": "package",
             "type": "shell",
             "command": "mvn -B package",
             "group": "build",
