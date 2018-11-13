@@ -2,7 +2,7 @@
 
 /usr/local/s2i/assemble
 
-echo "****** Adding debug option to launch script ******"
+echo "****** Enabling debugging in EAP ******"
 
 search="standalone.sh -c"
 replace="standalone.sh --debug -c"
@@ -10,3 +10,10 @@ run=${JBOSS_HOME}/bin/openshift-launch.sh
 
 echo "****** Changing \"${search}\" to \"${replace}\" in ${run} ******"
 sed -i "s/${search}/${replace}/g" ${run}
+
+search="auto-deploy-exploded=\"false\""
+replace="auto-deploy-exploded=\"true\""
+config=$JBOSS_HOME/standalone/configuration/standalone-openshift.xml
+
+echo "****** Changing \"${search}\" to \"${replace}\" in ${run} ******"
+sed -i "s/${search}/${replace}/g" ${config}

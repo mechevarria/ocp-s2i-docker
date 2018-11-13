@@ -8,6 +8,6 @@ pod_name=$(oc get pods --selector app=eap-s2i | { read line1 ; read line2 ; echo
 deploy_dir=/deployments/ROOT
 
 # exploded war directory
-exploded_dir=$(pwd)/target/jws-app/
+exploded_dir=$(pwd)/target/s2i-1.0-SNAPSHOT/
 
 oc rsync ${exploded_dir} ${pod_name}:${deploy_dir} --watch
