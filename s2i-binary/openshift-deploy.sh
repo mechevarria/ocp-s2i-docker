@@ -12,8 +12,9 @@ else
 fi
 
 oc new-app \
---name=eap-s2i \
+--name=eap-s2i-binary \
+-p APPLICATION_NAME=eap-s2i-binary \
 -p SOURCE_REPOSITORY_URL=https://github.com/mechevarria/ocp-s2i-docker \
 -p SOURCE_REPOSITORY_REF=eap \
--p CONTEXT_DIR=/s2i \
+-p CONTEXT_DIR=/s2i-binary \
 --template=eap71-basic-s2i
