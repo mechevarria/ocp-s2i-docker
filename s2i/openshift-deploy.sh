@@ -17,3 +17,5 @@ oc new-app \
 -p SOURCE_REPOSITORY_REF=eap \
 -p CONTEXT_DIR=/s2i \
 --template=eap71-basic-s2i
+
+oc set env dc/eap-app AUTO_DEPLOY_EXPLODED=true
