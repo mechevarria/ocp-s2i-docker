@@ -16,9 +16,10 @@ Examples of when to use each:
 * [s2i](https://github.com/openshift/source-to-image) as the build tool using docker
 
 ## Usage
+Each folder has bash scripts that are used to build the same basic Java Webapp in multiple ways to deploy on Openshift. By linking your local docker to the Container Development Kit registry you can easily spin up the application in Openshift as well via `docker run`
 
-Each folder has numbered bash scripts that are used to build the same basic Java Webapp in multiple ways and run using your local docker instance. By using the Container Development Kit registry you can easily spin up the application in Openshift as well via the web console.
+The **s2i** directory does a full build from source and includes an additional script,  **.s2i/bin/assemble**,  to enable remote debugging. You can then use `openshift-debug.sh` to debug in your local IDE and hot deploying changes as a WAR with `openshift-hotdeploy`
 
-The **s2i** directory does a full build from source and includes an additional script to enable remote debugging, `openshift-debug.sh` and hot deploying changes from an exploded WAR `openshift-hotdeploy`
+The **s2i-binary** directory is the same as the s2i folder, but skips the maven build and copies over the war file. Debugging is also enabled via the **.s2i/bin/assemable** script
 
-The **builder** directory is based on the scaffolding providing from the **s2i** create command 
+The **docker** directory uses a docker file to build the application and pushes to the local docker registry. If linked to Openshift, the image can be deployed using the web console or `oc` tool.
