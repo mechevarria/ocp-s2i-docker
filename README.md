@@ -1,6 +1,8 @@
 # Examples for Building Java Applications on Openshift
 
-For developers using [Openshift](https://www.openshift.com/). Included are examples of [source to image](https://github.com/openshift/source-to-image), **source to image** binary deployment (copy the WAR) and a build from a **docker** file.
+For developers using JBoss EAP on [Openshift](https://www.openshift.com/). Included are examples of [source to image](https://github.com/openshift/source-to-image), **source to image** binary deployment (copy the WAR) and a build from a **docker** file.
+
+![screenshot](./screenshot.png)
 
 Examples of when to use each:
 
