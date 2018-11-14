@@ -1,10 +1,10 @@
-strategy:
-  activeDeadlineSeconds: 21600
-  recreateParams:
-    timeoutSeconds: 600
-  resources: {}
-  sourceStrategy:
-    from:
-      kind: "ImageStreamTag"
-      name: "jboss-eap71-openshift:latest"
-    incremental: true
+  strategy:
+    activeDeadlineSeconds: 21600
+    recreateParams:
+      timeoutSeconds: 600
+    resources: {}
+    sourceStrategy:
+      from:
+        kind: "ImageStreamTag"
+        name: "jboss-eap71-openshift:latest"
+      incremental: true

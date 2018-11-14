@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
-echo "****** Custom assemble script ******"
+echo "****** Coping war to deployments ******"
 
 cp -rv /tmp/src/ROOT.war /deployments/
+
+echo "****** Enabling debugging in EAP ******"
+
+search="standalone.sh -c"
+replace="standalone.sh --debug -c"
+run=${JBOSS_HOME}/bin/openshift-launch.sh
+
+echo "****** Changing \"${search}\" to \"${replace}\" in ${run} ******"
+sed -i "s/${search}/${replace}/g" ${run}
