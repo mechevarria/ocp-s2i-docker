@@ -16,7 +16,7 @@ public class StatusController {
 		Logger log = Logger.getLogger(getClass());
 
 		log.info("****** Called the StatusController ******");
-		Status restStatus = new Status("The Java REST API is now up!");
+		Status restStatus = new Status("The Java REST API is something different!");
 
 		return restStatus;
 
